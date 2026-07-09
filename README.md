@@ -51,6 +51,16 @@ A true natural-product orphan from the original library (CNP0015547.1, nn = 0.41
 docks −10.9 on the same scale, beating the positive control — converging with the
 repurposed drugs.
 
+**Orthogonal co-fold check.** Re-folding the InhA candidates with an independent
+structure predictor (Boltz-2) corroborates the docking *poses*: all six ligands,
+including the natural-product orphan, place in the InhA pocket with interface
+confidence (ligand-ipTM 0.83–0.97) comparable to the known-inhibitor positive
+control. Boltz-2's affinity module was non-discriminating here (it scored the
+positive control as low as the candidates), so we read the co-fold as
+pose-level support only — not added binding evidence.
+
+![Co-fold rescue](figures/cofold_rescue.png)
+
 ### Foundation — the wall and the honest instrument
 Everything rests on the quantified analog wall and a reliability-aware two-stage
 pipeline. The wall is **source-independent** (reproduces on NP Atlas / CMAUP gap
@@ -86,9 +96,18 @@ structural validation is the right instrument.
 
 ```
 figures/    all publication figures (PNG)
-data/       result tables (CSV) + the InhA–TCS-2314 docked complex (PDB)
-docs/       full submission writeup + literature positioning
+data/       result tables (CSV) + docked/co-folded complexes (PDB)
+docs/        writeups, preprint, and forward-looking design docs
 ```
+
+### Documents
+| file | what it is |
+|---|---|
+| `docs/PAPER.md` | full bioRxiv-style preprint (Abstract → Methods → Results → Discussion → Limitations) |
+| `docs/SUBMISSION.md` | hackathon submission writeup (demo-forward, three-layer framing) |
+| `docs/LITERATURE_POSITIONING.md` | honest positioning against prior art (MolTarPred, TarFisDock, cold-start DTI) |
+| `docs/future_directions.md` | ranked next-project directions, grounded in literature/tools |
+| `docs/AD_FRAMEWORK_PITCH.md` | design doc: adapting the framework to neurodegenerative-disease targets (with a candid crowdedness verdict) |
 
 ### Key data files
 | file | what it is |
