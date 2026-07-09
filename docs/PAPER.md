@@ -152,7 +152,7 @@ All intermediate result tables underlying the figures and statistics — the orp
 ![Figure 7](figures/repurposing_docking.png)
 
 **Figure 8. Orthogonal co-folding of the InhA hits.** Boltz-2 *ab initio* complex prediction for the six InhA ligands: interface confidence (ligand-ipTM 0.83–0.97) corroborates the docking poses independently of the docking box; the affinity module is non-discriminating and reported only as a stated null.
-![Figure 8]({{artifact:art_c8469fbf-3087-4ba4-98bf-316067288156}})
+![Figure 8](figures/cofold_rescue_figure.png)
 
 **Figure 9. Generalization to CNS targets at library scale.** The reliability-aware pipeline ported to acetylcholinesterase and MAO-B and applied to 1.74M CNS-like ZINC compounds: 97.7% BBB-permeant, controls validate (donepezil/safinamide at the 86th decoy percentile), and no candidate clears the decoy 5th percentile — the protocol transfers and honestly declines to over-nominate.
-![Figure 9]({{artifact:art_2c7e7403-48c1-463a-86f9-80d521f2830a}})
+![Figure 9](figures/zinc_screen_figure.png)
