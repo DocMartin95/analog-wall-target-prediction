@@ -1,0 +1,7 @@
+dataset,stratum,n,active,inactive,med_score_active,med_score_inactive,MWU_p,conclusion
+pure_CO-ADD_experimental,ALL,156,42,114,0.339,0.341,0.7471,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data
+pure_CO-ADD_experimental,above_wall,84,23,61,0.457,0.435,0.4068,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data
+pure_CO-ADD_experimental,below_wall,72,19,53,0.219,0.27,0.9949,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data
+merged_ChEMBL+CO-ADD,ALL,377,203,174,0.333,0.354,0.9063,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data
+merged_ChEMBL+CO-ADD,above_wall,213,111,102,0.439,0.452,0.6519,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data
+merged_ChEMBL+CO-ADD,below_wall,164,92,72,0.242,0.267,0.9796,nomination score does NOT predict whole-cell antimicrobial phenotype (target-phenotype gap); null holds on pure experimental data

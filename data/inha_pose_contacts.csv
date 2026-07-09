@@ -1,0 +1,8 @@
+ligand,affinity,centroid_to_box,Tyr158_contact,catalytic,pocket_contacts
+POS_CHEMBL216579,-11.44,4.26,True,"LYS165,TYR158",2
+TCS-2314,-11.2,5.37,True,"LYS165,TYR158",3
+radiprodil,-10.6,2.19,True,TYR158,3
+PK-THPP,-10.34,2.41,True,"LYS165,TYR158",4
+AK-7,-10.1,2.64,True,"LYS165,TYR158",4
+PF-750,-9.683,8.13,False,,1
+OAC2,-9.123,3.5,True,"LYS165,TYR158",4

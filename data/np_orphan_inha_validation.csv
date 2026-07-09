@@ -1,0 +1,6 @@
+np_orphan,nn_analog,affinity,vs_decoy_pctile,decoys_stronger,beats_5pct,Tyr158,catalytic
+CNP0015547.1,0.409,-10.92,100.0,0/37,True,True,"LYS165,TYR158"
+POS_CHEMBL216579,,-10.66,100.0,0/37,True,True,"LYS165,TYR158"
+CNP0299616.1,0.404,-9.479,86.0,5/37,False,True,"LYS165,TYR158"
+CNP0017147.1,0.412,-9.106,73.0,10/37,False,True,"LYS165,TYR158"
+CNP0023898.0,0.478,-8.567,65.0,13/37,False,False,

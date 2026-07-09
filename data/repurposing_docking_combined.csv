@@ -1,0 +1,11 @@
+target,drug,nn_analog,affinity,POS,NEG,beats_pos,id_ok,box_valid,round
+EcDHFR,chuanxiongzine,0.3181818127632141,-4.717,-8.272,-5.693,False,True,True,
+InhA,TCS-2314,0.3066666722297668,-11.19,-10.72,-5.787,True,True,True,
+InhA,radiprodil,0.304347813129425,-10.55,-10.72,-5.787,False,True,True,
+InhA,PK-THPP,0.3098591566085815,-10.15,-10.72,-5.787,False,True,True,
+InhA,AK-7,0.4375,-10.09,-10.72,-5.769,False,True,True,
+InhA,PF-750,0.4827586114406585,-9.653,-10.72,-5.769,False,True,True,
+InhA,OAC2,0.4347825944423675,-9.1,-10.72,-5.769,False,True,True,
+TEM1_blac,caricotamide,0.3000000119209289,-6.042,-7.624,-4.814,False,True,True,
+TEM1_blac,GNE-7915,0.3000000119209289,-5.724,-7.636,-4.825,False,True,True,
+TEM1_blac,ISX-9,0.3000000119209289,-5.506,-7.636,-4.825,False,True,True,
