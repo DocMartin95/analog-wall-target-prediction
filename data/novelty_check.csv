@@ -1,0 +1,6 @@
+molecule,known_primary_target,reported_InhA_binder,novelty_status
+TCS-2314,"Our TCS-2314 = InChIKey ITXAAOWFOURIHK (C28H34N4O6, urea-linked diaryl carboxamide). A search on the string ""TCS-2314"" returns triclosan-derivative InhA-inhibitor literature, but our structure is Tanimoto 0.049 to triclosan with no diaryl ether — a different molecule sharing the catalog-code string","No — our structure is not the triclosan-class InhA inhibitor (ruled out by InChIKey + Tanimoto 0.049, i.e. by structure)",Not a reported InhA binder; name overlap with triclosan-class InhA inhibitors ruled out structurally. Off-target InhA hypothesis
+radiprodil,"NR2B / GluN2B NMDA receptor antagonist (clinical, CNS)",No,Off-target InhA hypothesis; no prior InhA report
+AK-7,"SIRT2 inhibitor (brain-permeable, neuroprotective in Parkinson's)","No — appears in TB literature only as a SIRT2 host-directed-therapy tool, NOT an InhA binder",Off-target InhA hypothesis; no prior InhA report
+PK-THPP,TASK-3 (KCNK9/K2P) potassium channel blocker,No,Off-target InhA hypothesis; no prior InhA report
+CNP0015547.1,"COCONUT natural product, true structural orphan (nn=0.41)",No known target at all,Genuine orphan; nomination is a hypothesis

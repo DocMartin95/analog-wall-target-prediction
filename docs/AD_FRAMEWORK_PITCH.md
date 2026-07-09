@@ -129,3 +129,34 @@ Our antimicrobial pipeline already carries a "target engagement ≠ phenotype" c
 - **Start with AChE + MAO-B** because their approved-drug co-crystals make the controls airtight.
 
 *All PDB IDs verified against the RCSB search API this session. Papers cited with DOI/PMID where available in the References inline above.*
+
+---
+
+## Pilot RESULTS (executed)
+
+The first experiment above was run end-to-end. Outcome: **the framework transfers cleanly to CNS targets, the controls validate, and — honestly — no candidate rises above the decoy background.** This is a reliability report, not a hit list.
+
+**BBB gate.** A RandomForest classifier trained on the MoleculeNet BBBP benchmark (AUC 0.893, balanced accuracy 0.829 on held-out test) was applied to 12,780 molecules (8,780 repurposing drugs + 4,000 COCONUT natural products). **75.2% predicted brain-permeant** — the drug pool passes at a higher rate than the NP pool, as expected.
+
+**Nomination + analog wall.** Against AChE (211 known binders) and MAO-B (120), 656 BBB-permeant molecules produced a below-wall (Tanimoto 0.35–0.5) nomination — genuine extrapolations flagged as such.
+
+**Controls-first docking (AChE 4EY7 / MAO-B 2V5Z).** The Step-0 gate passed on both targets:
+
+| target | positive control | vs decoys | decoy median |
+|---|---|---|---|
+| AChE | donepezil −10.68 | 86th percentile | −8.80 |
+| MAO-B | safinamide −9.96 | 86th percentile | −6.92 |
+
+Negative controls (ibuprofen, glucose) docked weakly (−8.5 to −5.6) as expected.
+
+**Candidates — no standout.** The best below-wall candidates approached but did not clear the decoy 5th-percentile:
+
+| target | best candidate | affinity | decoys stronger |
+|---|---|---|---|
+| AChE | cryptotanshinone (drug) | −10.47 | 3 / 14 |
+| AChE | CNP0215173.1 (NP orphan) | −10.21 | 4 / 14 |
+| MAO-B | CNP0349822.1 (NP orphan) | −9.87 | 2 / 14 |
+
+**Interpretation.** Unlike InhA — whose deep hydrophobic substrate channel discriminated candidates sharply — the cholinesterase gorge and MAO-B cavity are permissive enough that property-matched decoys dock competitively, so docking alone does not nominate a confident hit here. **The correct output is to say so.** A recovery check confirms the setup: canonical AChE/MAO natural-product chemotypes (galantamine, huperzine-A, rasagiline) land *above* the analog wall, while donepezil and safinamide fall into the "deep" band — a stated limitation that our benchmark's AChE binder set under-represents those specific scaffolds.
+
+See `figures/alzheimers_pilot.png` and `alzheimers/ad_dock_results.csv`.
