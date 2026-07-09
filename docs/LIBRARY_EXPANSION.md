@@ -40,9 +40,11 @@ for CNS-like properties (MW 300–350, logP 2–3).
 and is far above the 75.2% seen on a mixed drug/NP pool — confirming the CNS-tranche
 selection worked. The analog wall stratified the library as expected.
 
-**Docking — same honest result as the CNS pilot.** Controls validated (donepezil
-−11.46, safinamide −9.96, both far above decoy median), but **no candidate cleared
-the decoy 5th percentile**. The strongest MAO-B nominations (ZINC3181507 −9.82,
+**Docking — same honest pattern as the CNS pilot.** Each run re-docks its own
+positive control, so absolute control scores differ slightly between runs (this
+run: donepezil −11.46, safinamide −9.96; the earlier CNS pilot: donepezil −10.68,
+safinamide −9.96). In both, the controls sit far above the decoy median, and in
+both **no candidate cleared the decoy 5th percentile**. The strongest MAO-B nominations (ZINC3181507 −9.82,
 ZINC62117537 −9.75) only *approached* positive-control strength. The top AChE
 nomination (ZINC4038896) is a galantamine-like benzofuran — a recovery signal that
 the library surfaces analogs of validated chemotypes.
