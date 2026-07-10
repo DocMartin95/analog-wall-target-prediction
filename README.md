@@ -28,6 +28,13 @@ drug** on that target family.
 
 ![Convergence on InhA](figures/unified_inha_convergence.png)
 
+> **Try it:** open [`demo/index.html`](demo/index.html) in any browser (no server
+> needed) to explore the result tables interactively: pick a molecule and see its
+> nominated targets against the analog wall, browse the resistance screen, and view
+> the carotenoid-to-PXR docking. A runnable notebook, [`demo/analog_wall_demo.ipynb`](demo/analog_wall_demo.ipynb),
+> reproduces the headline numbers, and [`demo/PRESENTATION_KIT.md`](demo/PRESENTATION_KIT.md)
+> has the 3-minute video script and short description.
+
 Two papers report the work: **`PAPER.md`** (the antimicrobial framework and its
 resistance extension) and **`PROJECT_B_PAPER.md`** (a standalone application to
 microbiome-metabolite target nomination, flagship result: a cluster of microbial
