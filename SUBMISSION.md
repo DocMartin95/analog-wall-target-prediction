@@ -131,6 +131,18 @@ The two discovery modes are the same method pointed at two molecule pools.
 
 *(Figure: unified_inha_figure.png.)*
 
+**We stress-tested both halves of this claim.** Enlarging the InhA reference set
+from 7 to **273 ChEMBL binders** and re-docking, the headline orphan reconfirms
+(−11.28, clears all 37 decoys) and a **second independent orphan (CNP0541259.0,
+−10.11)** also clears the decoy 5th percentile: the natural-product arm is now two
+validated orphans, not one. We then hunted for a *second* convergence target
+(HIV-1 reverse transcriptase) and report an **honest null**: the docking positive
+controls fail there too, so the polymerase site is one rigid docking cannot resolve,
+and the pipeline correctly refuses to promote the lead. A method that only ever
+confirmed itself would be the warning sign; this one rejects what it cannot support.
+
+*(Figure: weekend_validation_figure.png.)*
+
 ### 6. Orthogonal confirmation, the InhA poses aren't a docking artifact
 
 Docking scores can reflect the box or the scoring function. So we re-ran the InhA
