@@ -1,4 +1,4 @@
-# Where the map runs out: an open, reliability-aware pipeline for natural-product and drug target prediction
+# Where the map runs out: an open, reliability-aware pipeline for target prediction, from natural products to drug repurposing to antimicrobial resistance
 
 **Built with Claude, Life Sciences hackathon submission**
 
@@ -80,7 +80,7 @@ credible pathogen-target nomination: **2,155 above the wall, 1,218 below it** (t
 2D-blind inventory), including **282 deep orphans** (nn < 0.35). The below-wall set
 spans bacterial (1,023), viral (180), fungal, and parasitic targets.
 
-*(Figure: repurposing_map_figure.png.)*
+*(Figure: repurposing_map.png.)*
 
 ### 3. Docking rescue + decoy enrichment, the validation
 
@@ -97,7 +97,7 @@ receptors. The result is a clean, honest, two-sided finding:
   TEM-1 β-lactamase and E. coli DHFR below-wall candidates dock no better (or
   worse) than random decoys. The two-stage QC filters as well as it finds.
 
-*(Figures: repurposing_dock_figure.png, decoy_enrichment_figure.png.)*
+*(Figures: repurposing_docking.png, decoy_enrichment.png.)*
 
 ### 4. The discovery arm, orphans validate against their own nominated targets
 
@@ -129,7 +129,7 @@ clears all 37 decoys, and engages both catalytic residues. **A discovered natura
 product and a repurposed drug land on the same target through one pipeline.**
 The two discovery modes are the same method pointed at two molecule pools.
 
-*(Figure: unified_inha_figure.png.)*
+*(Figure: unified_inha_convergence.png.)*
 
 **We stress-tested both halves of this claim.** Enlarging the InhA reference set
 from 7 to **273 ChEMBL binders** and re-docking, the headline orphan reconfirms
@@ -143,7 +143,31 @@ confirmed itself would be the warning sign; this one rejects what it cannot supp
 
 *(Figure: weekend_validation_figure.png.)*
 
-### 6. Orthogonal confirmation, the InhA poses aren't a docking artifact
+### 6. The resistance extension, will the target still be druggable after mutation?
+
+A target nomination is only useful for antimicrobials if the target stays
+druggable once resistance arises. Rigid docking cannot answer this: known drugs
+score essentially unchanged (ΔΔG ≈ 0) against their own clinical resistance
+mutations. So we built the piece no existing resource provides: a **curated
+mutant-aware target database** (10 priority pathogen targets, 76 resistance
+mutations, all from X-ray structures) and a **control-validated ΔΔG layer**
+(mCSM-lig class) that must pass a hard positive-control gate before we trust any
+natural-product score. It does: it recovers the affinity loss of trimethoprim
+against *S. aureus* DHFR-F98Y and pyrimethamine against *P. falciparum*
+DHFR-S108N, leave-target-out (88 to 92% correct destabilization direction).
+
+We then screened **163 below-wall natural-product orphans over 626
+ligand–mutation pairs** across the nine targets that yield scorable complexes. A
+subset of natural products is predicted **more resistance-robust than the
+front-line drug**, led on the validated DHFR family by **seven orphans below the
+trimethoprim-class control's worst-case liability**. This is the resistance
+question answered with the same reliability-aware discipline as the rest of the
+pipeline, and it turns "here is a candidate target" into "here is a candidate that
+may still work after the target mutates."
+
+*(Figure: mutant_selective_screen.png.)*
+
+### 7. Orthogonal confirmation, the InhA poses aren't a docking artifact
 
 Docking scores can reflect the box or the scoring function. So we re-ran the InhA
 hits through **Boltz-2 co-folding**, an independent, *ab initio* method that
@@ -154,9 +178,9 @@ in the same pocket corroborates the result. (Honest note: Boltz-2's *affinity*
 module did not discriminate our compounds, so we use co-folding for pose support
 only, not as a binding-strength claim.)
 
-*(Figure: cofold_rescue_figure.png.)*
+*(Figure: cofold_rescue.png.)*
 
-### 7. It generalizes, same protocol, a whole new disease area
+### 8. It generalizes, same protocol, a whole new disease area
 
 To show the framework isn't a one-target trick, we ported it **unchanged** to
 Alzheimer's disease targets (acetylcholinesterase, MAO-B), adding one upstream
@@ -172,7 +196,7 @@ a new disease area and knows when to stay quiet.
 
 *(Figure: alzheimers_pilot.png, zinc_screen_figure.png.)*
 
-### 8. The honest null, why the structural stage is necessary
+### 9. The honest null, why the structural stage is necessary
 
 We validated against CO-ADD experimental whole-cell antimicrobial screening data
 (pure experimental slice, 156 drugs). Nomination score does **not** predict
@@ -181,6 +205,21 @@ gap**, whole-cell killing depends on permeability, efflux, and dose, not
 single-target binding, and it is *why* target-level structural validation
 (docking), not phenotype screening, is the right instrument for confirming a
 target prediction.
+
+---
+
+## A companion application: microbiome metabolites to host targets
+
+The same reliability-aware framework, pointed in the forward direction at a
+different problem, is written up as a standalone short paper
+(`PROJECT_B_PAPER.md`). Applied to 1,537 microbial-origin metabolites, it nominates
+host protein targets, recovers 3 of 3 testable known microbiome-to-host axes above
+the wall (niacin to HCAR2, secondary bile acids to FXR and TGR5), and after a
+structural drug-origin filter that separates *Streptomyces* pharmaceuticals
+recovering known pharmacology, surfaces a flagship novel hypothesis: a cluster of
+**9 microbial carotenoids that all nominate the xenobiotic-sensing receptor PXR**,
+which every one confirms by docking within 1 kcal/mol of the canonical agonist
+rifampicin. It is the same instrument, generalizing to a second domain.
 
 ---
 
@@ -200,6 +239,10 @@ all exist in the literature (MolTarPred, TarFisDock, and others; see
   approved antifolate on *E. coli* DHFR).
 - **One validation standard across discovery and repurposing**, the convergence
   demonstration.
+- **A resistance-aware extension no existing resource provides**, a curated
+  mutant-aware pathogen-target database plus a control-validated ΔΔG layer that
+  answers whether a nominated target stays druggable after mutation, and nominates
+  natural products predicted more resistance-robust than the front-line drug.
 - **Orthogonal structural confirmation**, the InhA poses survive an independent
   *ab initio* co-folding method, not just docking.
 - **It generalizes**, the same reliability-aware protocol ports to a new disease
