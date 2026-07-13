@@ -24,20 +24,25 @@ calibrated confidence score* and **structurally validating below-wall prediction
 by docking with real controls**, and pointed the *same* pipeline at three problems:
 **natural-product discovery**, **drug repurposing**, and **antimicrobial resistance**.
 
-**Headline result:** a natural-product orphan and an FDA-approved drug, chemically
-unrelated, **converge on the same antibacterial target (*M. tuberculosis* InhA)**
-through one identical validation standard; and a mutant-aware ΔΔG layer then
+**Headline result:** a natural-product orphan and a compound from a drug-repurposing
+library, chemically unrelated (Tanimoto 0.28, no shared scaffold), **converge on the
+same antibacterial target (*M. tuberculosis* InhA)**, the enzyme the front-line drug
+isoniazid targets, through one identical validation standard; and a mutant-aware ΔΔG
+layer then
 nominates natural products predicted **more resistance-robust than the front-line
 drug** on that target family.
 
 ![Convergence on InhA](figures/unified_inha_convergence.png)
 
+> **Watch the demo (3 min):** [`demo/Orphan_Finder_demo.mp4`](demo/Orphan_Finder_demo.mp4)
+> plays in the browser on GitHub, or [download it directly](https://github.com/DocMartin95/analog-wall-target-prediction/raw/main/demo/Orphan_Finder_demo.mp4).
+>
 > **Try it:** open [`demo/index.html`](demo/index.html) in any browser (no server
 > needed) to explore the result tables interactively: pick a molecule and see its
 > nominated targets against the analog wall, browse the resistance screen, and view
 > the carotenoid-to-PXR docking. A runnable notebook, [`demo/analog_wall_demo.ipynb`](demo/analog_wall_demo.ipynb),
 > reproduces the headline numbers, and [`demo/PRESENTATION_KIT.md`](demo/PRESENTATION_KIT.md)
-> has the 3-minute video script and short description.
+> has the video script and short description.
 
 Two papers report the work: **`PAPER.md`** (the antimicrobial framework and its
 resistance extension) and **`PROJECT_B_PAPER.md`** (a standalone application to

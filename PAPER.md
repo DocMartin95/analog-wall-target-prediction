@@ -126,7 +126,7 @@ With the wall quantified, an orphan edge established, and the structural filter 
 
 ### 3.5 InhA: discovery and repurposing converge on one validated pocket
 
-The framework's most arresting behavior is that its two directions, an approved drug seeking a new pathogen target and a natural-product orphan seeking any target, independently nominate *M. tuberculosis* InhA (enoyl-ACP reductase) and both survive structural validation on a single decoy scale (Figure 6).
+The framework's most arresting behavior is that its two directions, a drug-repurposing-library compound seeking a new pathogen target and a natural-product orphan seeking any target, independently nominate *M. tuberculosis* InhA (enoyl-ACP reductase) and both survive structural validation on a single decoy scale (Figure 6).
 
 **Repurposing direction.** Six below-wall drugs dock InhA at −9.1 to −11.2 kcal/mol. Four clear the decoy 5th percentile: TCS-2314 (−11.19 kcal/mol, 0/37 decoys stronger), radiprodil (−10.55, 0/37), PK-THPP (−10.15, 1/37), and AK-7 (−10.09, 1/37). The group is enriched over decoys (Mann-Whitney p = 0.0004). Five of the six engage the catalytic Tyr158 (all except PF-750), and three of the top four (TCS-2314, PK-THPP, AK-7) also contact Lys165. Two compounds illustrate the filter's discrimination rather than passing it: PF-750 is a geometric outlier (pose centroid 8.13 Å off box center, no Tyr158 contact), and OAC2 is weakest by score (−9.10, 10/37 decoys stronger) yet still engages the Tyr158/Lys165 dyad. We explicitly do **not** call five of six top-tail; only four clear the 5th percentile.
 

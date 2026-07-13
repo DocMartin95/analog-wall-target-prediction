@@ -6,9 +6,10 @@
 
 ## The one-line takeaway
 
-**A natural-product orphan and an FDA-approved drug, chemically unrelated, from
-opposite ends of the discovery world, converge on the same antibacterial target
-(*M. tuberculosis* InhA) when passed through one honest validation standard.**
+**A natural-product orphan and a compound from a drug-repurposing library, chemically
+unrelated (Tanimoto 0.28), from opposite ends of the discovery world, converge on the
+same antibacterial target (*M. tuberculosis* InhA) when passed through one honest
+validation standard.**
 That convergence is only visible because the pipeline is built to work *below the
 analog wall*: the region of chemical space where conventional similarity-based
 target prediction provably fails.
@@ -28,7 +29,7 @@ The same blind spot exists for **drug repurposing**. When we ran 8,780 approved
 and clinical-stage drugs through target prediction against pathogen targets,
 **1,218 drugs had credible pathogen-target predictions that sit *below* the analog
 wall**, predictions that standard similarity screens systematically miss. These
-are approved drugs, already safety-tested in humans, with latent antibacterial /
+are approved and clinical-stage drugs, already safety-tested in humans, with latent antibacterial /
 antiviral target hypotheses that the usual tools cannot surface.
 
 **The problem the field has:** a flood of ranked predictions with no way to know

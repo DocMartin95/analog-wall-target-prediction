@@ -17,8 +17,8 @@ half the score, so this is where to spend the effort.
 > with a calibrated confidence distance, structurally validates below-wall
 > predictions by docking with real controls, and extends to resistance with a
 > curated mutant-aware target database and a control-validated ΔΔG layer. Headline:
-> a natural-product orphan and an FDA-approved drug, chemically unrelated, converge
-> on the same tuberculosis target through one standard, and the resistance layer
+> a natural-product orphan and a drug-repurposing-library compound, chemically unrelated,
+> converge on the same tuberculosis target through one standard, and the resistance layer
 > then nominates natural products predicted more resistance-robust than the
 > front-line drug. Every stage was orchestrated with Claude, including a
 > self-auditing loop that caught and corrected real errors live. Fully open; all
@@ -58,8 +58,8 @@ concrete.
 
 ### 1:00 to 1:55 : The result (Depth)
 > "Here is what the honesty buys you. A natural-product orphan with no known target,
-> and an FDA-approved drug, chemically unrelated, converge on the same tuberculosis
-> target, InhA, through one identical validation standard. Both beat a decoy
+> and a compound from a drug-repurposing library, chemically unrelated, converge on the
+> same tuberculosis target, InhA, through one identical validation standard. Both beat a decoy
 > distribution; an independent structure predictor confirms the poses. Then we asked
 > the question that matters for antibiotics: will the target still be druggable after
 > resistance mutations? Rigid docking is blind to that, so we built a mutant-aware
