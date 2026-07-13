@@ -59,12 +59,13 @@ each one.**
 So does the physics route really find targets past the wall? Here's the test that
 convinced me.
 
-Two molecules: one orphan natural product, one approved drug. On that similarity score
-they sit at zero point two eight. They're chemical strangers, no shared skeleton.
+Two molecules: one orphan natural product, and a compound from a drug-repurposing
+library, something already made for a different job. On that similarity score they sit
+at zero point two eight. They're chemical strangers, no shared skeleton.
 
-Yet both fold into the same pocket of the same enzyme, InhA, the protein the
-tuberculosis drug isoniazid attacks. Both grip its catalytic residue. Both beat a field
-of decoys, and a separate structure method agrees.
+Yet both fold into the same pocket of the same enzyme, InhA. That's the enzyme the
+frontline tuberculosis drug isoniazid was built to shut down. Both of our molecules grip
+its catalytic residue. Both beat a field of decoys, and a separate structure method agrees.
 
 **Two strangers, the same target, found by one rule. That's the tool working.**
 
