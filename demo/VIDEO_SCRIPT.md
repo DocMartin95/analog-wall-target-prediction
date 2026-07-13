@@ -96,23 +96,25 @@ Resistance-proof leads, from molecules that had no known target at all.
 
 ===================================================================
 
-## SLIDE 6 | One engine, many diseases
+## SLIDE 6 | A second application: the microbiome
 
-And this isn't a one-trick tool for tuberculosis. It's a general instrument, and we
-proved it on two more problems.
+And this isn't a one-trick tool for tuberculosis. To prove it generalizes, we pointed
+the same engine in a new direction: the microbiome.
 
-First, the microbiome. We aimed the same engine at molecules made by our gut bacteria
-and asked what they do to us. It flagged a whole family of microbial pigments that all
-converge on one human protein, PXR, the master switch controlling how our bodies clear
-drugs. Every one confirmed by docking, a concrete, testable link between our gut microbes
-and our own drug metabolism.
+Our gut bacteria constantly release molecules into our bodies, and for most of them we
+don't know what human proteins they act on. So we asked Orphan Finder.
 
-Second, the brain. We ran the same pipeline across 1.7 million brain-penetrant molecules
-aimed at the two enzymes that Alzheimer's drugs target, AChE and MAO-B. The real
-Alzheimer's drugs, our controls, scored right where they should, proving the engine
-transfers cleanly to a whole new disease area at massive scale.
+First, a sanity check. Run in this forward direction, the engine re-discovered signaling
+we already know is real, gut molecules like niacin and secondary bile acids hitting their
+known human receptors. So the method works here too.
 
-**Antibiotics, the microbiome, the brain. One engine, three frontiers of human health.**
+Then the new finding. Orphan Finder flagged a whole family of microbial carotenoids, the
+pigments these bacteria make, all converging on a single human protein: PXR, the master
+switch that controls how our bodies clear drugs. We docked every one of them, and all nine
+bind as tightly as rifampicin, the known drug that activates PXR.
+
+**That's a concrete, testable hypothesis: the pigments in our gut microbes may be tuning
+how we metabolize medicine. Same engine, a completely different frontier.**
 
 ===================================================================
 
