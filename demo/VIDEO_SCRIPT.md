@@ -25,8 +25,8 @@ same protein. Chemists score that resemblance from zero to one, one means near-i
 twins, zero means nothing in common.
 
 But that shortcut fails for the molecules that matter most. Orphans, by definition, look
-like nothing we've seen, so there's nothing to compare them to. We measured exactly where
-it breaks: below a similarity of one half, prediction collapses.
+like nothing we've seen. We measured exactly where it breaks: below a similarity of one
+half, prediction collapses.
 
 **Across 695,000 natural products, sixty-three percent live past that cliff. We call it
 the analog wall.**
@@ -41,12 +41,12 @@ molecule's 3D shape into the protein's pocket to see if it truly fits.
 
 That whole system runs on Claude Science.
 
-From one instruction, it pulls together the world's natural-product libraries, reads in
-each protein's 3D structure, sends the hard past-the-wall cases to physics-based docking
-on GPUs, and ranks everything by how strong and how trustworthy the prediction is.
+From one instruction, it pulls together the world's natural-product libraries, reads each
+protein's structure, sends the hard past-the-wall cases to physics-based docking on GPUs,
+and ranks the results.
 
-**You point it at a molecule, and it returns the proteins it most likely targets, with
-an honest confidence for each.** A months-long lab hunt becomes a single run.
+**You point it at a molecule, and it returns the proteins it most likely targets, with an
+honest confidence for each.** A months-long lab hunt becomes a single run.
 
 ===================================================================
 
@@ -59,10 +59,9 @@ Take two molecules. One orphan natural product, and one compound from a drug-rep
 library, made for a different purpose. On that similarity score they sit at zero point
 two eight, far below the wall. They are chemical strangers, sharing no common skeleton.
 
-And yet both fold into the same pocket of the same bacterial enzyme, InhA, the enzyme
-the frontline tuberculosis drug isoniazid was built to shut down. Both grip the same
-catalytic residue. Both beat a whole field of decoy controls. And a separate
-structure-prediction method puts them in the same place.
+And yet both fold into the same pocket of the same bacterial enzyme, InhA, the enzyme the
+tuberculosis drug isoniazid was built to shut down. Both grip the same catalytic residue,
+both beat a field of decoy controls, and a separate structure method confirms it.
 
 **Two chemical strangers, pointed at the same target, found by one rule. That's the tool
 working.**
@@ -94,11 +93,11 @@ And this isn't a one-trick tool for tuberculosis. To show it generalizes, we poi
 same engine at the microbiome, the molecules our gut bacteria release into us, most of
 which have no known human target.
 
-First a sanity check: the engine re-discovered signaling we already know is real, niacin
-and bile acids hitting their known human receptors. Then the new finding. It flagged a
-family of microbial carotenoids, the pigments these bacteria make, all converging on one
-human protein: PXR, the master switch that controls how our bodies clear drugs. All nine
-dock as tightly as rifampicin, the known drug that activates it.
+First, a sanity check: it re-discovered signaling we already know, niacin and bile acids
+hitting their known receptors. Then the new finding. It flagged a family of microbial
+carotenoids, the pigments these bacteria make, all converging on one human protein: PXR,
+the master switch controlling how our bodies clear drugs. All nine dock as tightly as
+rifampicin, the drug that activates it.
 
 **A concrete, testable hypothesis: our gut microbes' pigments may be tuning how we
 metabolize medicine. Same engine, a different frontier.**
@@ -107,11 +106,11 @@ metabolize medicine. Same engine, a different frontier.**
 
 ## SLIDE 7 | Close
 
-About ninety percent of nature's molecules have no known target. That's not a dead end.
-It's an enormous, unopened library of possible medicines.
+About ninety percent of nature's molecules have no known target. That's not a dead end,
+it's an unopened library of medicines.
 
-Orphan Finder opens it, taking molecules nobody had a target for and handing back ranked,
-structure-backed, resistance-aware leads a lab can test. It's fully open source, and
-every result reproduces from the repository.
+Orphan Finder opens it, turning molecules nobody had a target for into ranked,
+structure-backed, resistance-aware leads a lab can test. Fully open source, every result
+reproducible.
 
 Built on Claude Science. Thank you.
