@@ -9,12 +9,9 @@ Comprehensive version, no fixed cap. One continuous story. Land the bold lines.
 
 I'm James Martin, and this is Orphan Finder.
 
-Nature is still our best source of medicine. About half of all approved drugs trace
-back to a natural product, to something first made by a plant, a microbe, or a fungus.
-
-But most of these molecules are stuck. We can see they do something, but we don't know
-which protein in the body they act on. And without the target, you can't develop the
-drug.
+About half of all approved drugs come from natural products, from plants, microbes,
+and fungi. But most of these molecules are stuck: we can see they do something, yet we
+don't know which protein they act on, and without the target you can't build a drug.
 
 **We call those orphan molecules. Orphan Finder gives them a target.**
 
@@ -22,26 +19,21 @@ drug.
 
 ## SLIDE 2 | Why they stay orphans
 
-Why don't we already know their targets? It comes down to how prediction normally works.
+Why don't we already know? It comes down to how prediction normally works: guilt by
+association. If a new molecule looks like a drug we understand, we assume it hits the
+same protein. Chemists score that resemblance from zero to one, one means near-identical
+twins, zero means nothing in common.
 
-The standard approach is guilt by association: if a new molecule looks like a drug we
-understand, we assume it hits the same protein. Chemists score that resemblance from
-zero to one. One means near-identical twins; zero means nothing in common.
-
-That works, but only up to a point. The moment a molecule looks like nothing we've seen,
-there's nothing to compare it to, and the method quietly falls apart. And orphans, by
-definition, are the molecules that look like nothing we've seen.
-
-So we measured where it breaks, and found a hard cliff: below a similarity of one half,
-prediction stops working.
+But that shortcut fails for the molecules that matter most. Orphans, by definition, look
+like nothing we've seen, so there's nothing to compare them to. We measured exactly where
+it breaks: below a similarity of one half, prediction collapses.
 
 **Across 695,000 natural products, sixty-three percent live past that cliff. We call it
 the analog wall.**
 
-Our central idea: Orphan Finder always knows which side of that wall it's on. With a
-close relative, it uses the shortcut. Past the wall, it stops guessing from resemblance
-and switches to physics, folding the molecule's 3D shape into the protein's pocket to
-see if it truly fits.
+So here's our idea: Orphan Finder always knows which side of the wall it's on. With a
+close relative, it uses the shortcut. Past the wall, it switches to physics, folding the
+molecule's 3D shape into the protein's pocket to see if it truly fits.
 
 ===================================================================
 
@@ -53,8 +45,8 @@ From one instruction, it pulls together the world's natural-product libraries, r
 each protein's 3D structure, sends the hard past-the-wall cases to physics-based docking
 on GPUs, and ranks everything by how strong and how trustworthy the prediction is.
 
-**You point it at a molecule, and it hands back the proteins it most likely targets,
-with an honest confidence for each.** A months-long lab hunt becomes a single run.
+**You point it at a molecule, and it returns the proteins it most likely targets, with
+an honest confidence for each.** A months-long lab hunt becomes a single run.
 
 ===================================================================
 
@@ -79,11 +71,11 @@ working.**
 
 ## SLIDE 5 | The part that matters for antibiotics
 
-For an antibiotic, naming the target isn't enough. Bacteria fight back: they mutate the
-target protein, reshaping the pocket just enough that the drug stops sticking. That's
-antibiotic resistance, and it's retiring our medicines faster than we invent new ones.
+For an antibiotic, naming the target isn't enough. Bacteria fight back, mutating the
+target until the drug no longer sticks. That's antibiotic resistance, and it's retiring
+our medicines faster than we invent new ones.
 
-So we taught Orphan Finder a harder question, not just does it bind, but does it still
+So we taught Orphan Finder a harder question: not just does it bind, but does it still
 bind after the bacteria mutate? We checked it against resistance we already understand,
 and it correctly reproduced how today's drugs get defeated. Then we turned it on the
 orphans.
@@ -98,23 +90,18 @@ Resistance-proof leads, from molecules that had no known target at all.
 
 ## SLIDE 6 | A second application: the microbiome
 
-And this isn't a one-trick tool for tuberculosis. To prove it generalizes, we pointed
-the same engine in a new direction: the microbiome.
+And this isn't a one-trick tool for tuberculosis. To show it generalizes, we pointed the
+same engine at the microbiome, the molecules our gut bacteria release into us, most of
+which have no known human target.
 
-Our gut bacteria constantly release molecules into our bodies, and for most of them we
-don't know what human proteins they act on. So we asked Orphan Finder.
+First a sanity check: the engine re-discovered signaling we already know is real, niacin
+and bile acids hitting their known human receptors. Then the new finding. It flagged a
+family of microbial carotenoids, the pigments these bacteria make, all converging on one
+human protein: PXR, the master switch that controls how our bodies clear drugs. All nine
+dock as tightly as rifampicin, the known drug that activates it.
 
-First, a sanity check. Run in this forward direction, the engine re-discovered signaling
-we already know is real, gut molecules like niacin and secondary bile acids hitting their
-known human receptors. So the method works here too.
-
-Then the new finding. Orphan Finder flagged a whole family of microbial carotenoids, the
-pigments these bacteria make, all converging on a single human protein: PXR, the master
-switch that controls how our bodies clear drugs. We docked every one of them, and all nine
-bind as tightly as rifampicin, the known drug that activates PXR.
-
-**That's a concrete, testable hypothesis: the pigments in our gut microbes may be tuning
-how we metabolize medicine. Same engine, a completely different frontier.**
+**A concrete, testable hypothesis: our gut microbes' pigments may be tuning how we
+metabolize medicine. Same engine, a different frontier.**
 
 ===================================================================
 
