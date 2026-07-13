@@ -1,4 +1,8 @@
-# The Analog Wall: reliability-aware target prediction for natural products, drug repurposing, and antimicrobial resistance
+# Orphan Finder
+
+### Reliability-aware target prediction for natural products, drug repurposing, and antimicrobial resistance
+
+**Team: Past the Wall**  ·  James K. Martin II, PhD, Rowan-Virtua School of Osteopathic Medicine
 
 An open, end-to-end pipeline that predicts protein targets for small molecules,
 **quantifies where it stops being trustworthy**, and **extends to whether a
