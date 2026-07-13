@@ -1,107 +1,93 @@
-# Video script, read-aloud version
+# Orphan Finder | video script (read-aloud)
 
-This is written to be spoken, not read. Short sentences. One breath each.
-Slow down on the bold lines. Every slide has a time budget; if you are running
-long, cut the sentence marked (optional).
+Spoken, expert voice. Short sentences. Land the bold lines. ~2:45 at a calm pace.
+Team: Past the Wall. Presenter: James K. Martin II.
 
-Total target: about 2 minutes 50 seconds. Speak calmly, do not rush.
+===================================================================
 
----
+## SLIDE 1 | Title  (0:00-0:15)
 
-## SLIDE 1 | Title  (0:00 to 0:15)
+I'm James Martin. This is Orphan Finder.
 
-Hi. I'm James Martin.
+Half of all approved drugs trace back to natural products. But most natural
+products have no known target, so they sit on the shelf.
 
-Most drug discovery finds new targets by chemical similarity.
+Orphan Finder predicts those targets, and tells you which predictions to believe.
 
-You take a molecule, find something like it, and borrow its target.
+===================================================================
 
-But that approach fails, quietly, exactly where new medicines have to come from.
+## SLIDE 2 | The analog wall  (0:15-0:50)
 
----
+Target prediction leans on chemical similarity. Find a molecule like a known drug,
+inherit its target. That breaks the moment a molecule has no close relative.
 
-## SLIDE 2 | The analog wall  (0:15 to 0:45)
+We quantified exactly where it breaks. Across 695,000 natural products in COCONUT,
+similarity prediction collapses at a Tanimoto of 0.5.
 
-We measured where it fails. We call it the analog wall.
+**Sixty-three percent of natural product space sits past that wall, unreachable.**
 
-We looked at six hundred and ninety-five thousand natural products.
+So every prediction carries a distance to that wall. Above it, trust the analogy.
+Below it, we dock the pose against real controls.
 
-**Sixty-three percent have no close match among known drugs.**
+===================================================================
 
-For those, similarity prediction simply cannot work. There is nothing to compare to.
+## SLIDE 3 | Built on Claude Science  (0:50-1:20)
 
-Nobody usually measures this line. We did.
+The whole engine runs on Claude Science. It pulled the data from COCONUT, ChEMBL, and
+the Broad repurposing library, ran ESM-2 protein embeddings, and dispatched docking to
+GPUs on Modal.
 
----
+**One prompt drives a pipeline that fingerprints 695,000 compounds and docks the
+survivors against verified receptor structures.**
 
-## SLIDE 3 | The pipeline and Claude  (0:45 to 1:20)
+A scientist points it at a molecule, and it returns ranked, structure-checked targets.
 
-So we built an open pipeline that respects that wall.
+===================================================================
 
-It nominates a target, and it tells you how much to trust the nomination.
+## SLIDE 4 | Convergence on InhA  (1:20-1:55)
 
-For the risky predictions, it checks them with real docking and real controls.
+Here is what it finds. A natural product with no annotated target, and an approved
+drug, share no chemical scaffold. Both land on the same enzyme: InhA, the
+tuberculosis target of isoniazid.
 
-Claude ran the whole thing. And here is the part I like most.
+Both dock into the substrate channel. Both contact the catalytic tyrosine, Tyr158.
+Both beat a matched decoy set. Docking alone can flatter a pose, so we confirmed it a
+second way, with an independent structure predictor. It agrees.
 
-Claude audited its own work, and caught real mistakes as they happened.
+**Two unrelated molecules, one validated target, reached by one standard.**
 
-**One receptor was labeled human but was actually a rabbit protein. Claude caught it.**
+===================================================================
 
-One docking test let caffeine beat the real drug. Claude flagged it and fixed it.
+## SLIDE 5 | Resistance-robust hits  (1:55-2:25)
 
----
+Then the question that decides an antibiotic's future: does the target survive
+resistance mutations?
 
-## SLIDE 4 | The convergence  (1:20 to 1:55)
+We built a mutant-aware scoring layer and validated it on known resistance: it
+reproduces how trimethoprim loses DHFR, and pyrimethamine loses malarial DHFR.
 
-Here is what that honesty buys you.
+Then we screened orphan natural products against those same mutated pockets.
 
-A natural product with no known target. And an approved drug. Two unrelated molecules.
+**On DHFR, seven natural products are predicted to hold their binding where the
+front-line drug fails.** Those are resistance-robust leads, ranked and ready to test.
 
-**They land on the same tuberculosis target, through one shared test.**
+===================================================================
 
-Both beat a decoy control. An independent structure tool confirms how they bind.
+## SLIDE 6 | One engine, three problems  (2:25-2:45)
 
-That is a real, checkable result. Not a lucky guess.
+The same engine generalizes. It screened 1.7 million compounds for Alzheimer's
+targets, and flagged a family of microbial carotenoids all converging on the human
+receptor PXR, every one confirmed by docking.
 
----
+Antibiotics, neurodegeneration, the microbiome. One pipeline.
 
-## SLIDE 5 | Resistance  (1:55 to 2:25)
+===================================================================
 
-Then we asked the question that matters for antibiotics.
+## SLIDE 7 | Close  (2:45-3:00)
 
-Will the target still work after the bacteria mutate?
+Orphan Finder turns the ninety percent of natural products with no known target into
+ranked, structure-backed, resistance-aware leads.
 
-Normal docking is blind to that. So we built a resistance layer.
+It is fully open. Every result reproduces from the repository. Built on Claude Science.
 
-It passes the mutation test that ordinary docking fails.
-
-**It finds natural products that hold up better against resistance than the current drug.**
-
-Seven of them, on one enzyme family alone.
-
----
-
-## SLIDE 6 | It generalizes  (2:25 to 2:45)
-
-This is not a one-target trick.
-
-We pointed the same pipeline at Alzheimer's targets, across one point seven million compounds.
-
-And at gut microbe molecules, where a whole family of pigments converges on one human receptor.
-
-Same tool. Three different problems. (optional)
-
----
-
-## SLIDE 7 | Close  (2:45 to 3:00)
-
-One last thing, and it matters.
-
-Every molecule here is a lead to test in a lab. Never a finished drug.
-
-When the pipeline cannot support a hit, it says so. We report those too.
-
-It is fully open. Everything you just saw reproduces from the repository.
-
-Built with Claude. Thank you.
+Thank you.
