@@ -1,93 +1,109 @@
 # Orphan Finder | video script (read-aloud)
 
-Spoken, expert voice. Short sentences. Land the bold lines. ~2:45 at a calm pace.
-Team: Past the Wall. Presenter: James K. Martin II.
+Team: Past the Wall  ·  Presenter: James K. Martin II
+One continuous story, natural pace. Land the bold lines. About 3 minutes at ~150 wpm.
 
 ===================================================================
 
-## SLIDE 1 | Title  (0:00-0:15)
+## SLIDE 1 | Title  (0:00-0:18)
 
-I'm James Martin. This is Orphan Finder.
+I'm James Martin, and this is Orphan Finder.
 
-Half of all approved drugs trace back to natural products. But most natural
-products have no known target, so they sit on the shelf.
+Nature is still our best source of medicine. About half of all approved drugs come
+from natural products, from plants, microbes, and fungi.
 
-Orphan Finder predicts those targets, and tells you which predictions to believe.
+But for most of these molecules, we don't know what they hit in the body. We can see
+they're active. We just don't know where they act.
 
-===================================================================
-
-## SLIDE 2 | The analog wall  (0:15-0:50)
-
-Target prediction leans on chemical similarity. Find a molecule like a known drug,
-inherit its target. That breaks the moment a molecule has no close relative.
-
-We quantified exactly where it breaks. Across 695,000 natural products in COCONUT,
-similarity prediction collapses at a Tanimoto of 0.5.
-
-**Sixty-three percent of natural product space sits past that wall, unreachable.**
-
-So every prediction carries a distance to that wall. Above it, trust the analogy.
-Below it, we dock the pose against real controls.
+**We call those orphan molecules. Orphan Finder gives them a target.**
 
 ===================================================================
 
-## SLIDE 3 | Built on Claude Science  (0:50-1:20)
+## SLIDE 2 | Why they stay orphans  (0:18-1:00)
 
-The whole engine runs on Claude Science. It pulled the data from COCONUT, ChEMBL, and
-the Broad repurposing library, ran ESM-2 protein embeddings, and dispatched docking to
-GPUs on Modal.
+Why don't we already know? Because of how target prediction normally works.
 
-**One prompt drives a pipeline that fingerprints 695,000 compounds and docks the
-survivors against verified receptor structures.**
+The usual approach is guilt by association. If a new molecule looks like a known drug,
+we assume it hits the same protein. Chemists score that resemblance from zero to one:
+one means chemical twins, zero means nothing in common.
 
-A scientist points it at a molecule, and it returns ranked, structure-checked targets.
+That works right up until a molecule looks like nothing we've seen. And orphans, by
+definition, look like nothing we've seen.
 
-===================================================================
+We measured where it breaks. Below one half, prediction falls apart.
 
-## SLIDE 4 | Convergence on InhA  (1:20-1:55)
+**Across 695,000 natural products, sixty-three percent live past that line. We call it
+the analog wall.**
 
-Here is what it finds. A natural product with no annotated target, and an approved
-drug, share no chemical scaffold. Both land on the same enzyme: InhA, the
-tuberculosis target of isoniazid.
-
-Both dock into the substrate channel. Both contact the catalytic tyrosine, Tyr158.
-Both beat a matched decoy set. Docking alone can flatter a pose, so we confirmed it a
-second way, with an independent structure predictor. It agrees.
-
-**Two unrelated molecules, one validated target, reached by one standard.**
+Orphan Finder always knows which side of the wall it's on. With a look-alike, it uses
+it. Without one, it stops guessing and turns to physics, folding the molecule into the
+protein to see if it truly fits.
 
 ===================================================================
 
-## SLIDE 5 | Resistance-robust hits  (1:55-2:25)
+## SLIDE 3 | The engine  (1:00-1:22)
 
-Then the question that decides an antibiotic's future: does the target survive
-resistance mutations?
+That system runs on Claude Science.
 
-We built a mutant-aware scoring layer and validated it on known resistance: it
-reproduces how trimethoprim loses DHFR, and pyrimethamine loses malarial DHFR.
+From one instruction, it gathers the world's natural-product libraries, reads each
+protein's structure, sends the hard cases to physics-based docking on GPUs, and ranks
+what it finds.
 
-Then we screened orphan natural products against those same mutated pockets.
-
-**On DHFR, seven natural products are predicted to hold their binding where the
-front-line drug fails.** Those are resistance-robust leads, ranked and ready to test.
+**You point it at a molecule. It hands back the likely targets, and how much to trust
+each one.**
 
 ===================================================================
 
-## SLIDE 6 | One engine, three problems  (2:25-2:45)
+## SLIDE 4 | Proof it works  (1:22-1:58)
 
-The same engine generalizes. It screened 1.7 million compounds for Alzheimer's
-targets, and flagged a family of microbial carotenoids all converging on the human
-receptor PXR, every one confirmed by docking.
+So does the physics route really find targets past the wall? Here's the test that
+convinced me.
 
-Antibiotics, neurodegeneration, the microbiome. One pipeline.
+Two molecules: one orphan natural product, one approved drug. On that similarity score
+they sit at zero point two eight. They're chemical strangers, no shared skeleton.
+
+Yet both fold into the same pocket of the same enzyme, InhA, the protein the
+tuberculosis drug isoniazid attacks. Both grip its catalytic residue. Both beat a field
+of decoys, and a separate structure method agrees.
+
+**Two strangers, the same target, found by one rule. That's the tool working.**
 
 ===================================================================
 
-## SLIDE 7 | Close  (2:45-3:00)
+## SLIDE 5 | The part that matters for antibiotics  (1:58-2:35)
 
-Orphan Finder turns the ninety percent of natural products with no known target into
-ranked, structure-backed, resistance-aware leads.
+For an antibiotic, naming the target isn't enough. Bacteria fight back. They mutate the
+target until the drug stops sticking. That's resistance, and it's killing our medicines
+faster than we replace them.
 
-It is fully open. Every result reproduces from the repository. Built on Claude Science.
+So we taught Orphan Finder a harder question: not just does it bind, but does it still
+bind after the bacteria mutate? We checked it against resistance we already understand,
+and it correctly predicted how today's drugs fail.
 
-Thank you.
+**Then we turned it on the orphans. Against the enzyme DHFR, seven natural products are
+predicted to keep working right where the frontline drug is defeated.**
+
+Resistance-proof leads, from molecules nobody had a target for.
+
+===================================================================
+
+## SLIDE 6 | Not a one-target trick  (2:35-2:52)
+
+And this isn't just tuberculosis. We pointed the same engine at gut-microbe molecules
+and asked what they do to us. It flagged a whole family of microbial pigments all
+hitting one human receptor, PXR, the switch that controls how our bodies clear drugs.
+Every one confirmed by docking.
+
+**Antibiotics, the microbiome, the brain. One engine.**
+
+===================================================================
+
+## SLIDE 7 | Close  (2:52-3:05)
+
+Ninety percent of nature's molecules have no known target. That's not a dead end, it's
+an unopened library.
+
+Orphan Finder opens it, and hands you ranked, structure-backed, resistance-aware leads
+to test. Fully open, fully reproducible.
+
+Built on Claude Science. Thank you.
